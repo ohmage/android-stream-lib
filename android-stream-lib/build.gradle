@@ -1,0 +1,118 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6.+'
+    }
+}
+apply plugin: 'android-library'
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "18.0.1"
+
+    defaultConfig {
+        versionCode 0
+        versionName version
+        minSdkVersion 7
+        targetSdkVersion 18
+    }
+}
+
+configurations {
+    jaxDoclet
+    classpaths
+}
+
+dependencies {
+    jaxDoclet("com.google.doclava:doclava:1.0.5")
+    classpaths files('build/classes/debug')
+    classpaths files(new File(System.getenv('ANDROID_HOME') + '/platforms/android-19/android.jar'))
+}
+
+task androidJavadoc(type: Javadoc, dependsOn: 'compileRelease') {
+    source = android.sourceSets.main.allJava
+    title = null
+    options.docletpath = configurations.jaxDoclet.files.asType(List)
+    options.classpath = configurations.classpaths.files.asType(List)
+    options {
+        doclet "com.google.doclava.Doclava"
+        bootClasspath new File(System.getenv('JAVA_HOME') + "/jre/lib/rt.jar")
+        addStringOption "hdf project.name", project.name
+        addStringOption "federate android", "http://d.android.com/reference"
+        addStringOption "federationxml android", "http://doclava.googlecode.com/svn/static/api/android-10.xml"
+    }
+}
+
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def sonatypeRepositoryUrl() {
+    if (isReleaseVersion()) {
+        "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+    } else {
+        "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: sonatypeRepositoryUrl()) {
+                authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+
+            pom.project {
+                name 'Stream Library'
+                packaging 'aar'
+                description 'Easily send stream data points to the ohmage apk'
+                url 'https://github.com/ohmage/android-stream-lib'
+
+                scm {
+                    url 'scm:git@github.com:ohmage/android-stream-lib.git'
+                    connection 'scm:git@github.com:ohmage/android-stream-lib.git'
+                    developerConnection 'scm:git@github.com:ohmage/android-stream-lib.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'cketcham'
+                        name 'Cameron Ketcham'
+                        email 'cameron@ohmage.org'
+                    }
+                }
+            }
+        }
+    }
+
+    signing {
+        required { isReleaseVersion() && gradle.taskGraph.hasTask("uploadArchives") }
+        sign configurations.archives
+    }
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: 'androidJavadoc') {
+    classifier = 'javadoc'
+    from androidJavadoc.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.allSource
+}
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}

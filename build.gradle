@@ -1,0 +1,10 @@
+def isReleaseVersion() { !version.endsWith('SNAPSHOT') }
+
+allprojects {
+    version = "2.0-SNAPSHOT"
+    group = "org.ohmage"
+
+    repositories {
+        mavenCentral()
+    }
+}
