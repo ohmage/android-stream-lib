@@ -1,0 +1,754 @@
+<api>
+<package name="org.ohmage.streams"
+>
+<class name="AsyncBulkInsertHandler"
+ extends="android.os.Handler"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="AsyncBulkInsertHandler"
+ type="org.ohmage.streams.AsyncBulkInsertHandler"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cr" type="android.content.ContentResolver">
+</parameter>
+<parameter name="uri" type="android.net.Uri">
+</parameter>
+</constructor>
+<constructor name="AsyncBulkInsertHandler"
+ type="org.ohmage.streams.AsyncBulkInsertHandler"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="cr" type="android.content.ContentResolver">
+</parameter>
+<parameter name="uri" type="android.net.Uri">
+</parameter>
+<parameter name="delay" type="long">
+</parameter>
+<parameter name="maxBufferSize" type="int">
+</parameter>
+</constructor>
+<method name="createHandler"
+ return="android.os.Handler"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="looper" type="android.os.Looper">
+</parameter>
+</method>
+<method name="onBulkInsertComplete"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<parameter name="count" type="int">
+</parameter>
+</method>
+<method name="startInsert"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="values" type="android.content.ContentValues">
+</parameter>
+</method>
+<field name="FLUSH_DELAY"
+ type="long"
+ transient="false"
+ volatile="false"
+ value="500L"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="MAX_BUFFER"
+ type="int"
+ transient="false"
+ volatile="false"
+ value="600"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="AsyncBulkInsertHandler.WorkerArgs"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<constructor name="AsyncBulkInsertHandler.WorkerArgs"
+ type="org.ohmage.streams.AsyncBulkInsertHandler.WorkerArgs"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</constructor>
+<field name="handler"
+ type="android.os.Handler"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="result"
+ type="java.lang.Object"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="values"
+ type="android.content.ContentValues"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="AsyncBulkInsertHandler.WorkerHandler"
+ extends="android.os.Handler"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+<constructor name="AsyncBulkInsertHandler.WorkerHandler"
+ type="org.ohmage.streams.AsyncBulkInsertHandler.WorkerHandler"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="looper" type="android.os.Looper">
+</parameter>
+</constructor>
+</class>
+<class name="StreamContract"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="StreamContract"
+ type="org.ohmage.streams.StreamContract"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="checkContentProviderExists"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resolver" type="android.content.ContentResolver">
+</parameter>
+</method>
+<field name="ACTION_CONFIGURE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;org.ohmage.streams.ACTION_CONFIGURE&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="ACTION_VIEW"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;org.ohmage.streams.ACTION_VIEW&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="CONTENT_AUTHORITY"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;org.ohmage.streams&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="StreamContract.StreamCounts"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="StreamContract.StreamCounts"
+ type="org.ohmage.streams.StreamContract.StreamCounts"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="CONTENT_TYPE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;vnd.android.cursor.dir/vnd.ohmage.streams.count&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="CONTENT_URI"
+ type="android.net.Uri"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="StreamContract.Streams"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="StreamContract.Streams"
+ type="org.ohmage.streams.StreamContract.Streams"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<field name="CONTENT_TYPE"
+ type="java.lang.String"
+ transient="false"
+ volatile="false"
+ value="&quot;vnd.android.cursor.dir/vnd.ohmage.streams.stream&quot;"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+<field name="CONTENT_URI"
+ type="android.net.Uri"
+ transient="false"
+ volatile="false"
+ static="true"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</field>
+</class>
+<class name="StreamPointBuilder"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="StreamPointBuilder"
+ type="org.ohmage.streams.StreamPointBuilder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<constructor name="StreamPointBuilder"
+ type="org.ohmage.streams.StreamPointBuilder"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="streamId" type="java.lang.String">
+</parameter>
+<parameter name="streamVersion" type="int">
+</parameter>
+</constructor>
+<method name="clear"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="clearMetadata"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getMetadata"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="id"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="now"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setData"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="data" type="java.lang.String">
+</parameter>
+</method>
+<method name="setMetadata"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="metadata" type="java.lang.String">
+</parameter>
+</method>
+<method name="setStream"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="streamId" type="java.lang.String">
+</parameter>
+<parameter name="streamVersion" type="int">
+</parameter>
+</method>
+<method name="toContentValues"
+ return="android.content.ContentValues"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="withId"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="id" type="java.lang.String">
+</parameter>
+</method>
+<method name="withId"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="withLocation"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="location" type="android.location.Location">
+</parameter>
+<parameter name="timezone" type="java.lang.String">
+</parameter>
+</method>
+<method name="withLocation"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="time" type="long">
+</parameter>
+<parameter name="timezone" type="java.lang.String">
+</parameter>
+<parameter name="latitude" type="double">
+</parameter>
+<parameter name="longitude" type="double">
+</parameter>
+<parameter name="accuracy" type="float">
+</parameter>
+<parameter name="provider" type="java.lang.String">
+</parameter>
+</method>
+<method name="withTime"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="time" type="long">
+</parameter>
+<parameter name="timezone" type="java.lang.String">
+</parameter>
+</method>
+<method name="withTime"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="time" type="long">
+</parameter>
+</method>
+<method name="withTimestamp"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="timestamp" type="java.lang.String">
+</parameter>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="resolver" type="android.content.ContentResolver">
+</parameter>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="writer" type="org.ohmage.streams.StreamWriter">
+</parameter>
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
+<method name="writeAsync"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="android.content.AsyncQueryHandler">
+</parameter>
+<parameter name="token" type="int">
+</parameter>
+<parameter name="cookie" type="java.lang.Object">
+</parameter>
+</method>
+<method name="writeAsync"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="handler" type="org.ohmage.streams.AsyncBulkInsertHandler">
+</parameter>
+</method>
+</class>
+<class name="StreamWriter"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="android.content.ServiceConnection">
+</implements>
+<constructor name="StreamWriter"
+ type="org.ohmage.streams.StreamWriter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="context" type="android.content.Context">
+</parameter>
+</constructor>
+<method name="close"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="connect"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="onServiceConnected"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="android.content.ComponentName">
+</parameter>
+<parameter name="service" type="android.os.IBinder">
+</parameter>
+</method>
+<method name="onServiceDisconnected"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="name" type="android.content.ComponentName">
+</parameter>
+</method>
+<method name="setServiceConnectionChangeListener"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="listener" type="org.ohmage.streams.StreamWriter.ServiceConnectionChange">
+</parameter>
+</method>
+<method name="write"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="streamId" type="java.lang.String">
+</parameter>
+<parameter name="streamVersion" type="int">
+</parameter>
+<parameter name="metadata" type="java.lang.String">
+</parameter>
+<parameter name="data" type="java.lang.String">
+</parameter>
+<exception name="RemoteException" type="android.os.RemoteException">
+</exception>
+</method>
+<field name="mContext"
+ type="android.content.Context"
+ transient="false"
+ volatile="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="protected"
+>
+</field>
+</class>
+<interface name="StreamWriter.ServiceConnectionChange"
+ abstract="true"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="onServiceConnected"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="writer" type="org.ohmage.streams.StreamWriter">
+</parameter>
+</method>
+<method name="onServiceDisconnected"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="writer" type="org.ohmage.streams.StreamWriter">
+</parameter>
+</method>
+</interface>
+</package>
+</api>

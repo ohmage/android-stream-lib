@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="description" content="Javadoc API documentation for android-stream-lib." />
+
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>
+
+  StreamPointBuilder
+
+
+| android-stream-lib
+
+</title>
+<link href="../../../../assets/doclava-developer-docs.css" rel="stylesheet" type="text/css" />
+<link href="../../../../assets/customizations.css" rel="stylesheet" type="text/css" />
+<script src="../../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../../assets/doclava-developer-docs.js" type="text/javascript"></script>
+<script src="../../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../", "../../../../assets/");
+</script>
+<script src="../../../../assets/doclava-developer-reference.js" type="text/javascript"></script>
+<script src="../../../../assets/navtree_data.js" type="text/javascript"></script>
+<script src="../../../../assets/customizations.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="">
+
+<div id="header">
+    <div id="headerLeft">
+    
+      <span id="masthead-title">android-stream-lib</span>
+    
+    </div>
+    <div id="headerRight">
+      
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../')"
+                      onkeyup="return search_changed(event, false, '../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      
+    </div>
+</div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first side-nav-resizable" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links"><nobr>
+                <a href="../../../packages.html"  >Package Index</a> | 
+                <a href="../../../classes.html" >Class Index</a></nobr>
+              </div>
+              <ul>
+                
+    <li class="selected api apilevel-">
+  <a href="../../../org/ohmage/streams/package-summary.html">org.ohmage.streams</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/StreamWriter.ServiceConnectionChange.html">StreamWriter.ServiceConnectionChange</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.html">AsyncBulkInsertHandler</a></li>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.WorkerArgs.html">AsyncBulkInsertHandler.WorkerArgs</a></li>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.WorkerHandler.html">AsyncBulkInsertHandler.WorkerHandler</a></li>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/StreamContract.html">StreamContract</a></li>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/StreamContract.StreamCounts.html">StreamContract.StreamCounts</a></li>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/StreamContract.Streams.html">StreamContract.Streams</a></li>
+          <li class="selected api apilevel-"><a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></li>
+          <li class="api apilevel-"><a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a></li>
+      </ul>
+    </li>
+              
+              
+              
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links"><nobr>
+            <a href="../../../packages.html"  >Package Index</a> | 
+            <a href="../../../classes.html" >Class Index</a></nobr>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+
+<div class="sum-details-links">
+
+
+Summary:
+
+
+
+
+
+
+
+
+
+  <a href="#pubctors">Ctors</a>
+  
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+
+
+  
+  
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>StreamPointBuilder</h1>
+
+
+
+  
+    extends <a href="http://d.android.com/reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="http://d.android.com/reference/java/lang/Object.html">java.lang.Object</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">org.ohmage.streams.StreamPointBuilder</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>StreamPointBuilder class which makes it easy to create a point for a stream and send
+ it to ohmage.
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<table id="pubctors" class="jd-sumtable"><tr><th colspan="12">Public Constructors</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#StreamPointBuilder()">StreamPointBuilder</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            </nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#StreamPointBuilder(java.lang.String, int)">StreamPointBuilder</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> streamId, int streamVersion)</nobr>
+        
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#clear()">clear</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Clears everything associated with this point.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#clearMetadata()">clearMetadata</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Clears all metadata for this point.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#getMetadata()">getMetadata</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the metadata for this point</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#id()">id</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">The unique UUID for this point</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#now()">now</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Sets the time for this point to now</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#setData(java.lang.String)">setData</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> data)</nobr>
+        
+        <div class="jd-descrdiv">Set the point data.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#setMetadata(java.lang.String)">setMetadata</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> metadata)</nobr>
+        
+        <div class="jd-descrdiv">This should be a JSON object containing the metadata for this point.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#setStream(java.lang.String, int)">setStream</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> streamId, int streamVersion)</nobr>
+        
+        <div class="jd-descrdiv">The unique identifier for the stream and version to which this data applies.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/android/content/ContentValues.html">ContentValues</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#toContentValues()">toContentValues</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Creates the <code><a href="http://d.android.com/reference/android/content/ContentValues.html">ContentValues</a></code> for this point</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withId(java.lang.String)">withId</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> id)</nobr>
+        
+        <div class="jd-descrdiv">Set a UUID for this point.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withId()">withId</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Generates a UUID unique to this point.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withLocation(android.location.Location, java.lang.String)">withLocation</a></span>(<a href="http://d.android.com/reference/android/location/Location.html">Location</a> location, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</nobr>
+        
+        <div class="jd-descrdiv">Location that this response was taken</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withLocation(long, java.lang.String, double, double, float, java.lang.String)">withLocation</a></span>(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone, double latitude, double longitude, float accuracy, <a href="http://d.android.com/reference/java/lang/String.html">String</a> provider)</nobr>
+        
+        <div class="jd-descrdiv">Location that this response was taken</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(long)">withTime</a></span>(long time)</nobr>
+        
+        <div class="jd-descrdiv">A long specifying the survey completion time by the number of
+ milliseconds since the UNIX epoch.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(long, java.lang.String)">withTime</a></span>(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</nobr>
+        
+        <div class="jd-descrdiv">A long specifying the survey completion time by the number of
+ milliseconds since the UNIX epoch and the timezone ID for the timezone of
+ the device when this survey was taken.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTimestamp(java.lang.String)">withTimestamp</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> timestamp)</nobr>
+        
+        <div class="jd-descrdiv">The ISO8601-formatted date-time-timezone string.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#write(org.ohmage.streams.StreamWriter)">write</a></span>(<a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a> writer)</nobr>
+        
+        <div class="jd-descrdiv">Uses a <code><a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a></code> to send data to ohmage.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#write(android.content.ContentResolver)">write</a></span>(<a href="http://d.android.com/reference/android/content/ContentResolver.html">ContentResolver</a> resolver)</nobr>
+        
+        <div class="jd-descrdiv">Send this point to ohmage.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#writeAsync(android.content.AsyncQueryHandler, int, java.lang.Object)">writeAsync</a></span>(<a href="http://d.android.com/reference/android/content/AsyncQueryHandler.html">AsyncQueryHandler</a> handler, int token, <a href="http://d.android.com/reference/java/lang/Object.html">Object</a> cookie)</nobr>
+        
+        <div class="jd-descrdiv">Asynchronously send this point to ohmage.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#writeAsync(org.ohmage.streams.AsyncBulkInsertHandler)">writeAsync</a></span>(<a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.html">AsyncBulkInsertHandler</a> handler)</nobr>
+        
+        <div class="jd-descrdiv">Asynchronously queue this point to be sent to ohmage in a batch.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class
+
+  <a href="http://d.android.com/reference/java/lang/Object.html">java.lang.Object</a>
+
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/Object.html">Object</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">clone</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">equals</span>(<a href="http://d.android.com/reference/java/lang/Object.html">Object</a> arg0)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">finalize</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            <a href="http://d.android.com/reference/java/lang/Class.html">Class</a>&lt;?&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">getClass</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">hashCode</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notify</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">notifyAll</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="http://d.android.com/reference/java/lang/String.html">String</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">toString</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0, int arg1)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad">wait</span>(long arg0)</nobr>
+        
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<h2>Public Constructors</h2>
+
+
+
+<A NAME="StreamPointBuilder()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">StreamPointBuilder</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="StreamPointBuilder(java.lang.String, int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        
+      </span>
+      <span class="sympad">StreamPointBuilder</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> streamId, int streamVersion)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="clear()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">clear</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Clears everything associated with this point.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="clearMetadata()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">clearMetadata</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Clears all metadata for this point. Any other data will remain.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="getMetadata()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">getMetadata</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns the metadata for this point</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the metadata as a JSON string
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="id()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://d.android.com/reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">id</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The unique UUID for this point</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the id
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="now()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">now</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Sets the time for this point to now</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setData(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">setData</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> data)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set the point data.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setMetadata(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">setMetadata</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> metadata)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>This should be a JSON object containing the metadata for this point. This
+ field is optional. This field will be ignored on write if any other
+ metadata for this point is supplied to the builder.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="setStream(java.lang.String, int)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">setStream</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> streamId, int streamVersion)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The unique identifier for the stream and version to which this data applies.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="toContentValues()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="http://d.android.com/reference/android/content/ContentValues.html">ContentValues</a>
+      </span>
+      <span class="sympad">toContentValues</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates the <code><a href="http://d.android.com/reference/android/content/ContentValues.html">ContentValues</a></code> for this point</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>the content values
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="withId(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withId</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> id)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Set a UUID for this point.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="withId()"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withId</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Generates a UUID unique to this point.</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="withLocation(android.location.Location, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withLocation</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/location/Location.html">Location</a> location, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Location that this response was taken</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="withLocation(long, java.lang.String, double, double, float, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withLocation</span>
+      <span class="normal">(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone, double latitude, double longitude, float accuracy, <a href="http://d.android.com/reference/java/lang/String.html">String</a> provider)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Location that this response was taken</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="withTime(long)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withTime</span>
+      <span class="normal">(long time)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A long specifying the survey completion time by the number of
+ milliseconds since the UNIX epoch. The timezone used is the current
+ timezone.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="withTime(long, java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withTime</span>
+      <span class="normal">(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>A long specifying the survey completion time by the number of
+ milliseconds since the UNIX epoch and the timezone ID for the timezone of
+ the device when this survey was taken.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="withTimestamp(java.lang.String)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
+      </span>
+      <span class="sympad">withTimestamp</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> timestamp)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The ISO8601-formatted date-time-timezone string. If this is not present,
+ then the time and timezone fields will be used.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>this
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="write(org.ohmage.streams.StreamWriter)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">write</span>
+      <span class="normal">(<a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a> writer)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Uses a <code><a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a></code> to send data to ohmage. The <code><a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a></code> connects to a
+ remote service with a oneway interface.
+ <p/>
+ This method is useful when you have a lot of points to send and you have a clear start and
+ end. If the <code><a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a></code> is not connected yet, this method will automatically buffer
+ the point and try to connect. After the data is sent, the writer should be closed to
+ disconnect from the remote service.
+ <p/>
+ This method returns slower than the async calls, but generally the data is saved to ohmage
+ faster overall.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>writer</td>
+          <td>a <code><a href="../../../org/ohmage/streams/StreamWriter.html">StreamWriter</a></code> to send points.</td>
+        </tr>
+      </table>
+  </div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="http://d.android.com/reference/android/os/RemoteException.html">RemoteException</a></td>
+            <td>can be thrown if there was a problem sending the data to ohmage.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="write(android.content.ContentResolver)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">write</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/content/ContentResolver.html">ContentResolver</a> resolver)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Send this point to ohmage.
+ <p/>
+ If you have many points to send within a few milliseconds of each
+ other, you will get better performance by calling <code><a href="../../../org/ohmage/streams/StreamPointBuilder.html#write(org.ohmage.streams.StreamWriter)">write(StreamWriter)</a></code> or
+ <code><a href="../../../org/ohmage/streams/StreamPointBuilder.html#writeAsync(org.ohmage.streams.AsyncBulkInsertHandler)">writeAsync(AsyncBulkInsertHandler)</a></code>.
+ <p/>
+ This call will block until the point has been saved in ohmage.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>resolver</td>
+          <td>a <code><a href="http://d.android.com/reference/android/content/ContentResolver.html">ContentResolver</a></code> that is used to save the point
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="writeAsync(android.content.AsyncQueryHandler, int, java.lang.Object)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">writeAsync</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/content/AsyncQueryHandler.html">AsyncQueryHandler</a> handler, int token, <a href="http://d.android.com/reference/java/lang/Object.html">Object</a> cookie)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Asynchronously send this point to ohmage.
+ <p/>
+ If you have many points to send within a few milliseconds of each
+ other, you will get better performance by calling <code><a href="../../../org/ohmage/streams/StreamPointBuilder.html#write(org.ohmage.streams.StreamWriter)">write(StreamWriter)</a></code> or
+ <code><a href="../../../org/ohmage/streams/StreamPointBuilder.html#writeAsync(org.ohmage.streams.AsyncBulkInsertHandler)">writeAsync(AsyncBulkInsertHandler)</a></code>.
+ <p/>
+ This call returns without waiting for ohmage to save the point. Implement
+ <code><a href="null#onInsertComplete(int, java.lang.Object, android.net.Uri)">onInsertComplete(int, Object, Uri)</a></code> for the handler provided to get callbacks whenever
+ a point is saved to ohmage.
+ <p/>
+ Before sending data to ohmage, the stream should check that the content provider exists by
+ calling <code><a href="../../../org/ohmage/streams/StreamContract.html#checkContentProviderExists(android.content.ContentResolver)">checkContentProviderExists(ContentResolver)</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>handler</td>
+          <td>an AsyncQueryHandler to send the point</td>
+        </tr>
+        <tr>
+          <th>token</td>
+          <td>A token passed into <code><a href="null#onInsertComplete(int, java.lang.Object, android.net.Uri)">onInsertComplete(int, Object, Uri)</a></code> to identify
+                this write operation.</td>
+        </tr>
+        <tr>
+          <th>cookie</td>
+          <td>An object that gets passed into <code><a href="null#onInsertComplete(int, java.lang.Object, android.net.Uri)">onInsertComplete(int, Object, Uri)</a></code>
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="writeAsync(org.ohmage.streams.AsyncBulkInsertHandler)"></A>
+
+<div class="jd-details api apilevel-"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">writeAsync</span>
+      <span class="normal">(<a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.html">AsyncBulkInsertHandler</a> handler)</span>
+    </h4>
+      <div class="api-level">
+        <div>
+
+</div>
+        
+  
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Asynchronously queue this point to be sent to ohmage in a batch.
+ <p/>
+ If there is more time than the flush delay of the <code><a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.html">AsyncBulkInsertHandler</a></code> between
+ points you will get better performance by calling <code><a href="../../../org/ohmage/streams/StreamPointBuilder.html#write(android.content.ContentResolver)">write(ContentResolver)</a></code> or
+ <code><a href="../../../org/ohmage/streams/StreamPointBuilder.html#writeAsync(android.content.AsyncQueryHandler, int, java.lang.Object)">writeAsync(AsyncQueryHandler, int, Object)</a></code>.
+ <p/>
+ This call returns without waiting for ohmage to save points. Implement
+ <code><a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.html#onBulkInsertComplete(int)">onBulkInsertComplete(int)</a></code> for the handler provided to get
+ callbacks whenever batches of points are saved to ohmage.
+ <p/>
+ Before sending data to ohmage, the stream should check that the content provider exists by
+ calling <code><a href="../../../org/ohmage/streams/StreamContract.html#checkContentProviderExists(android.content.ContentResolver)">checkContentProviderExists(ContentResolver)</a></code></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>handler</td>
+          <td>an <code><a href="../../../org/ohmage/streams/AsyncBulkInsertHandler.html">AsyncBulkInsertHandler</a></code> to send batches of points
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+Generated by <a href="http://code.google.com/p/doclava/">Doclava</a>.
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize doclava-developer-docs.js */
+</script>
+
+</body>
+</html>
