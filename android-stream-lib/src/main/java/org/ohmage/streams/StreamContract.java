@@ -26,7 +26,7 @@ import android.provider.BaseColumns;
  *
  * @author cketcham
  */
-public class StreamContract {
+public final class StreamContract {
     public static final String CONTENT_AUTHORITY = "org.ohmage.streams";
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 
