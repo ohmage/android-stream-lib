@@ -39,6 +39,16 @@ import java.util.concurrent.CountDownLatch;
  */
 public class SendActivity extends ActionBarActivity {
 
+    /**
+     * A stream ID that will accept any kind of data. Useful for testing.
+     */
+    public static final String STREAM_ID = "eb5e35ee-6a4d-40ff-b503-e1f5b72e5a1d";
+
+    /**
+     * A random timestamp string.. just so I don't have to generate one for each point.
+     */
+    public static final String TIMESTAMP = "2013-11-12T15:50:02.123-05:00";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +60,6 @@ public class SendActivity extends ActionBarActivity {
                     .commit();
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,8 +99,8 @@ public class SendActivity extends ActionBarActivity {
 
         @Override
         public void run() {
-            mStreamPointBuilder = new StreamPointBuilder("streamid", 1);
-            mStreamPointBuilder.withId().now().setData(createData(mSize));
+            mStreamPointBuilder = new StreamPointBuilder(STREAM_ID, 1);
+            mStreamPointBuilder.withTimestamp(TIMESTAMP).setData(createData(mSize));
 
             long start = System.currentTimeMillis();
             initialize();
@@ -192,7 +201,7 @@ public class SendActivity extends ActionBarActivity {
         @Override
         public void sendData() {
             try {
-                getDataStreamPoint().write(mWriter);
+                getDataStreamPoint().withId().write(mWriter);
             } catch (RemoteException e) {
                 // The write didn't go through
                 // Either we are trying to send too many points at once, or the points we are
@@ -237,7 +246,7 @@ public class SendActivity extends ActionBarActivity {
         @Override
         public void sendData() {
             if(mProviderExists)
-                getDataStreamPoint().writeAsync(mHandler);
+                getDataStreamPoint().withId().writeAsync(mHandler);
         }
 
         @Override
@@ -280,7 +289,7 @@ public class SendActivity extends ActionBarActivity {
         @Override
         public void sendData() {
             if(mProviderExists)
-                getDataStreamPoint().writeAsync(mHandler, -1, null);
+                getDataStreamPoint().withId().writeAsync(mHandler, -1, null);
         }
 
         @Override
@@ -315,7 +324,7 @@ public class SendActivity extends ActionBarActivity {
 
         @Override
         public void sendData() {
-           getDataStreamPoint().write(mContentResolver);
+           getDataStreamPoint().withId().write(mContentResolver);
         }
 
         @Override
