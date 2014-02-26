@@ -3,20 +3,20 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.6.+'
+        classpath 'com.android.tools.build:gradle:0.8.+'
     }
 }
 apply plugin: 'android-library'
 
 android {
-    compileSdkVersion 18
-    buildToolsVersion "18.0.1"
+    compileSdkVersion 19
+    buildToolsVersion "19.0.1"
 
     defaultConfig {
         versionCode 0
         versionName version
         minSdkVersion 7
-        targetSdkVersion 18
+        targetSdkVersion 19
     }
 }
 
@@ -117,4 +117,9 @@ task androidSourcesJar(type: Jar) {
 artifacts {
     archives androidSourcesJar
     archives androidJavadocsJar
+}
+
+task androidJar(type:Exec, dependsOn: 'compileRelease') {
+  commandLine = ['jar', 'cf', '../../android-stream-lib.jar', 'org']
+  workingDir = 'build/classes/release'
 }
