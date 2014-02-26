@@ -23,9 +23,14 @@ import android.location.Location;
 import android.os.RemoteException;
 import android.util.Log;
 
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
 import java.util.TimeZone;
 import java.util.UUID;
 
@@ -36,6 +41,8 @@ import java.util.UUID;
 public class StreamPointBuilder {
 
     private static final String TAG = "StreamPointBuilder";
+
+    private static DateTimeFormatter dateTimeFormatter;
 
     public StreamPointBuilder() {
     }
@@ -71,23 +78,9 @@ public class StreamPointBuilder {
     private String mId;
 
     /**
-     * The ISO8601-formatted date-time-timezone string. If this is not present,
-     * then the time and timezone fields will be used.
+     * The ISO8601-formatted date-time-timezone string.
      */
     private String mTimestamp;
-
-    /**
-     * The number of milliseconds since the Unix epoch at UTC. This will only be
-     * checked if "timestamp" was not present.
-     */
-    private Long mTime;
-
-    /**
-     * The timezone of the device at the time of this recording as a string.
-     * This will only be checked if the "timestamp" was not present and the
-     * "time" was.
-     */
-    private String mTimezone;
 
     /**
      * <ul>
@@ -174,43 +167,42 @@ public class StreamPointBuilder {
     }
 
     /**
-     * The ISO8601-formatted date-time-timezone string. If this is not present,
-     * then the time and timezone fields will be used.
+     * Set the ISO8601-formatted date-time-timezone string. It is recommended to use one of the
+     * other withTime() functions since this one could create invalid points if the timestamp is
+     * formatted incorrectly.
      *
      * @param timestamp
      * @return this
      */
-    public StreamPointBuilder withTimestamp(String timestamp) {
+    public StreamPointBuilder withTime(String timestamp) {
         mTimestamp = timestamp;
         return this;
     }
 
     /**
-     * A long specifying the survey completion time by the number of
-     * milliseconds since the UNIX epoch and the timezone ID for the timezone of
-     * the device when this survey was taken.
+     * Set the time and timezone for this string. Time Zone is required for correct visualization of
+     * the data point.
      *
      * @param time
-     * @param timezone
-     * @return this
+     * @param timeZone
+     * @return
      */
-    public StreamPointBuilder withTime(long time, String timezone) {
-        mTime = time;
-        mTimezone = timezone;
+    public StreamPointBuilder withTime(Date time, TimeZone timeZone) {
+        if(dateTimeFormatter == null)
+            dateTimeFormatter = ISODateTimeFormat.dateTime().withOffsetParsed();
+        mTimestamp = dateTimeFormatter.print(new DateTime(time, DateTimeZone.forTimeZone(timeZone)));
         return this;
     }
 
     /**
-     * A long specifying the survey completion time by the number of
-     * milliseconds since the UNIX epoch. The timezone used is the current
-     * timezone.
-     *
+     * Set the time for this point to the value of the {@link DateTime}
      * @param time
-     * @return this
+     * @return
      */
-    public StreamPointBuilder withTime(long time) {
-        mTime = time;
-        mTimezone = TimeZone.getDefault().getID();
+    public StreamPointBuilder withTime(DateTime time) {
+        if(dateTimeFormatter == null)
+            dateTimeFormatter = ISODateTimeFormat.dateTime().withOffsetParsed();
+        mTimestamp = dateTimeFormatter.print(time);
         return this;
     }
 
@@ -220,8 +212,9 @@ public class StreamPointBuilder {
      * @return this
      */
     public StreamPointBuilder now() {
-        mTime = System.currentTimeMillis();
-        mTimezone = TimeZone.getDefault().getID();
+        if(dateTimeFormatter == null)
+            dateTimeFormatter = ISODateTimeFormat.dateTime().withOffsetParsed();
+        mTimestamp = dateTimeFormatter.print(DateTime.now());
         return this;
     }
 
@@ -268,8 +261,6 @@ public class StreamPointBuilder {
     public StreamPointBuilder clearMetadata() {
         mId = null;
         mTimestamp = null;
-        mTime = null;
-        mTimezone = null;
         mLocation = null;
         mMetadata = null;
         return this;
@@ -405,10 +396,6 @@ public class StreamPointBuilder {
                 metadata.put("id", mId);
             if (mTimestamp != null)
                 metadata.put("timestamp", mTimestamp);
-            if (mTime != null)
-                metadata.put("time", mTime);
-            if (mTimezone != null)
-                metadata.put("timezone", mTimezone);
             if (mLocation != null) {
                 JSONObject location = new JSONObject();
                 location.put("time", mLocation.getTime());

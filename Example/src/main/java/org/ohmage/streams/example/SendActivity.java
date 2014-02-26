@@ -44,11 +44,6 @@ public class SendActivity extends ActionBarActivity {
      */
     public static final String STREAM_ID = "eb5e35ee-6a4d-40ff-b503-e1f5b72e5a1d";
 
-    /**
-     * A random timestamp string.. just so I don't have to generate one for each point.
-     */
-    public static final String TIMESTAMP = "2013-11-12T15:50:02.123-05:00";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +95,7 @@ public class SendActivity extends ActionBarActivity {
         @Override
         public void run() {
             mStreamPointBuilder = new StreamPointBuilder(STREAM_ID, 1);
-            mStreamPointBuilder.withTimestamp(TIMESTAMP).setData(createData(mSize));
+            mStreamPointBuilder.now().setData(createData(mSize));
 
             long start = System.currentTimeMillis();
             initialize();
