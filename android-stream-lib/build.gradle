@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.8.+'
+        classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
 apply plugin: 'android-library'
@@ -33,7 +33,7 @@ dependencies {
     classpaths files(new File(System.getenv('ANDROID_HOME') + '/platforms/android-19/android.jar'))
 }
 
-task androidJavadoc(type: Javadoc, dependsOn: 'compileRelease') {
+task androidJavadoc(type: Javadoc, dependsOn: 'compileReleaseJava') {
     source = android.sourceSets.main.allJava
     title = null
     options.docletpath = configurations.jaxDoclet.files.asType(List)
