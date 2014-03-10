@@ -88,15 +88,9 @@ public class StreamPointBuilder {
      * <li>latitude: The latitude component.</li>
      * <li>longitude: The longitude component.</li>
      * <li>accuracy: The accuracy of the reading.</li>
-     * <li>provider: A string representing who provided this information.</li>
      * <ul>
      */
     private Location mLocation;
-
-    /**
-     * Location timezone (will most likely be the same as timezone)
-     */
-    private String mLocationTimezone;
 
     /**
      * The unique identifier for the stream and version to which this data applies.
@@ -222,12 +216,10 @@ public class StreamPointBuilder {
      * Location that this response was taken
      *
      * @param location
-     * @param timezone
      * @return this
      */
-    public StreamPointBuilder withLocation(Location location, String timezone) {
+    public StreamPointBuilder withLocation(Location location) {
         mLocation = location;
-        mLocationTimezone = timezone;
         return this;
     }
 
@@ -235,18 +227,15 @@ public class StreamPointBuilder {
      * Location that this response was taken
      *
      * @param time
-     * @param timezone
      * @param latitude
      * @param longitude
      * @param accuracy
-     * @param provider
      * @return this
      */
-    public StreamPointBuilder withLocation(long time, String timezone, double latitude,
-                                           double longitude, float accuracy, String provider) {
-        mLocation = new Location(provider);
+    public StreamPointBuilder withLocation(long time, double latitude,
+                                           double longitude, float accuracy) {
+        mLocation = new Location("?");
         mLocation.setTime(time);
-        mLocationTimezone = timezone;
         mLocation.setLatitude(latitude);
         mLocation.setLongitude(longitude);
         mLocation.setAccuracy(accuracy);
@@ -398,12 +387,10 @@ public class StreamPointBuilder {
                 metadata.put("timestamp", mTimestamp);
             if (mLocation != null) {
                 JSONObject location = new JSONObject();
-                location.put("time", mLocation.getTime());
-                location.put("timezone", mLocationTimezone);
+                location.put("timestamp", mLocation.getTime());
                 location.put("latitude", mLocation.getLatitude());
                 location.put("longitude", mLocation.getLongitude());
                 location.put("accuracy", mLocation.getAccuracy());
-                location.put("provider", mLocation.getProvider());
                 metadata.put("location", location);
             }
             if (metadata.length() > 0)
