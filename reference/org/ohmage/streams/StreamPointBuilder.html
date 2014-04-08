@@ -626,7 +626,7 @@ Summary:
             <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withLocation(android.location.Location, java.lang.String)">withLocation</a></span>(<a href="http://d.android.com/reference/android/location/Location.html">Location</a> location, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withLocation(long, double, double, float)">withLocation</a></span>(long time, double latitude, double longitude, float accuracy)</nobr>
         
         <div class="jd-descrdiv">Location that this response was taken</div>
   
@@ -644,7 +644,7 @@ Summary:
             <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withLocation(long, java.lang.String, double, double, float, java.lang.String)">withLocation</a></span>(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone, double latitude, double longitude, float accuracy, <a href="http://d.android.com/reference/java/lang/String.html">String</a> provider)</nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withLocation(android.location.Location)">withLocation</a></span>(<a href="http://d.android.com/reference/android/location/Location.html">Location</a> location)</nobr>
         
         <div class="jd-descrdiv">Location that this response was taken</div>
   
@@ -662,10 +662,9 @@ Summary:
             <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(long)">withTime</a></span>(long time)</nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(java.util.Date, java.util.TimeZone)">withTime</a></span>(<a href="http://d.android.com/reference/java/util/Date.html">Date</a> time, <a href="http://d.android.com/reference/java/util/TimeZone.html">TimeZone</a> timeZone)</nobr>
         
-        <div class="jd-descrdiv">A long specifying the survey completion time by the number of
- milliseconds since the UNIX epoch.</div>
+        <div class="jd-descrdiv">Set the time and timezone for this string.</div>
   
   </td></tr>
 
@@ -681,11 +680,9 @@ Summary:
             <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(long, java.lang.String)">withTime</a></span>(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(DateTime)">withTime</a></span>(DateTime time)</nobr>
         
-        <div class="jd-descrdiv">A long specifying the survey completion time by the number of
- milliseconds since the UNIX epoch and the timezone ID for the timezone of
- the device when this survey was taken.</div>
+        <div class="jd-descrdiv">Set the time for this point to the value of the DateTime</div>
   
   </td></tr>
 
@@ -701,9 +698,9 @@ Summary:
             <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a></nobr>
         </td>
         <td class="jd-linkcol" width="100%"><nobr>
-        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTimestamp(java.lang.String)">withTimestamp</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> timestamp)</nobr>
+        <span class="sympad"><a href="../../../org/ohmage/streams/StreamPointBuilder.html#withTime(java.lang.String)">withTime</a></span>(<a href="http://d.android.com/reference/java/lang/String.html">String</a> timestamp)</nobr>
         
-        <div class="jd-descrdiv">The ISO8601-formatted date-time-timezone string.</div>
+        <div class="jd-descrdiv">Set the ISO8601-formatted date-time-timezone string.</div>
   
   </td></tr>
 
@@ -1500,7 +1497,7 @@ From class
 </div>
 
 
-<A NAME="withLocation(android.location.Location, java.lang.String)"></A>
+<A NAME="withLocation(long, double, double, float)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1513,7 +1510,7 @@ From class
         <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
       </span>
       <span class="sympad">withLocation</span>
-      <span class="normal">(<a href="http://d.android.com/reference/android/location/Location.html">Location</a> location, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</span>
+      <span class="normal">(long time, double latitude, double longitude, float accuracy)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1536,7 +1533,7 @@ From class
 </div>
 
 
-<A NAME="withLocation(long, java.lang.String, double, double, float, java.lang.String)"></A>
+<A NAME="withLocation(android.location.Location)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1549,7 +1546,7 @@ From class
         <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
       </span>
       <span class="sympad">withLocation</span>
-      <span class="normal">(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone, double latitude, double longitude, float accuracy, <a href="http://d.android.com/reference/java/lang/String.html">String</a> provider)</span>
+      <span class="normal">(<a href="http://d.android.com/reference/android/location/Location.html">Location</a> location)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1572,7 +1569,7 @@ From class
 </div>
 
 
-<A NAME="withTime(long)"></A>
+<A NAME="withTime(java.util.Date, java.util.TimeZone)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1585,7 +1582,7 @@ From class
         <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
       </span>
       <span class="sympad">withTime</span>
-      <span class="normal">(long time)</span>
+      <span class="normal">(<a href="http://d.android.com/reference/java/util/Date.html">Date</a> time, <a href="http://d.android.com/reference/java/util/TimeZone.html">TimeZone</a> timeZone)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1597,20 +1594,14 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>A long specifying the survey completion time by the number of
- milliseconds since the UNIX epoch. The timezone used is the current
- timezone.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>this
-</li></ul>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p>Set the time and timezone for this string. Time Zone is required for correct visualization of
+ the data point.</p></div>
 
     </div>
 </div>
 
 
-<A NAME="withTime(long, java.lang.String)"></A>
+<A NAME="withTime(DateTime)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1623,7 +1614,7 @@ From class
         <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
       </span>
       <span class="sympad">withTime</span>
-      <span class="normal">(long time, <a href="http://d.android.com/reference/java/lang/String.html">String</a> timezone)</span>
+      <span class="normal">(DateTime time)</span>
     </h4>
       <div class="api-level">
         <div>
@@ -1635,20 +1626,13 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>A long specifying the survey completion time by the number of
- milliseconds since the UNIX epoch and the timezone ID for the timezone of
- the device when this survey was taken.</p></div>
-  <div class="jd-tagdata">
-      <h5 class="jd-tagtitle">Returns</h5>
-      <ul class="nolist"><li>this
-</li></ul>
-  </div>
+  <div class="jd-tagdata jd-tagdescr"><p>Set the time for this point to the value of the DateTime</p></div>
 
     </div>
 </div>
 
 
-<A NAME="withTimestamp(java.lang.String)"></A>
+<A NAME="withTime(java.lang.String)"></A>
 
 <div class="jd-details api apilevel-"> 
     <h4 class="jd-details-title">
@@ -1660,7 +1644,7 @@ From class
          
         <a href="../../../org/ohmage/streams/StreamPointBuilder.html">StreamPointBuilder</a>
       </span>
-      <span class="sympad">withTimestamp</span>
+      <span class="sympad">withTime</span>
       <span class="normal">(<a href="http://d.android.com/reference/java/lang/String.html">String</a> timestamp)</span>
     </h4>
       <div class="api-level">
@@ -1673,8 +1657,9 @@ From class
       </div>
     <div class="jd-details-descr">
       
-  <div class="jd-tagdata jd-tagdescr"><p>The ISO8601-formatted date-time-timezone string. If this is not present,
- then the time and timezone fields will be used.</p></div>
+  <div class="jd-tagdata jd-tagdescr"><p>Set the ISO8601-formatted date-time-timezone string. It is recommended to use one of the
+ other withTime() functions since this one could create invalid points if the timestamp is
+ formatted incorrectly.</p></div>
   <div class="jd-tagdata">
       <h5 class="jd-tagtitle">Returns</h5>
       <ul class="nolist"><li>this

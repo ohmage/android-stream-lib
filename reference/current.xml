@@ -475,8 +475,6 @@
 >
 <parameter name="location" type="android.location.Location">
 </parameter>
-<parameter name="timezone" type="java.lang.String">
-</parameter>
 </method>
 <method name="withLocation"
  return="org.ohmage.streams.StreamPointBuilder"
@@ -490,46 +488,14 @@
 >
 <parameter name="time" type="long">
 </parameter>
-<parameter name="timezone" type="java.lang.String">
-</parameter>
 <parameter name="latitude" type="double">
 </parameter>
 <parameter name="longitude" type="double">
 </parameter>
 <parameter name="accuracy" type="float">
 </parameter>
-<parameter name="provider" type="java.lang.String">
-</parameter>
 </method>
 <method name="withTime"
- return="org.ohmage.streams.StreamPointBuilder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="time" type="long">
-</parameter>
-<parameter name="timezone" type="java.lang.String">
-</parameter>
-</method>
-<method name="withTime"
- return="org.ohmage.streams.StreamPointBuilder"
- abstract="false"
- native="false"
- synchronized="false"
- static="false"
- final="false"
- deprecated="not deprecated"
- visibility="public"
->
-<parameter name="time" type="long">
-</parameter>
-</method>
-<method name="withTimestamp"
  return="org.ohmage.streams.StreamPointBuilder"
  abstract="false"
  native="false"
@@ -540,6 +506,34 @@
  visibility="public"
 >
 <parameter name="timestamp" type="java.lang.String">
+</parameter>
+</method>
+<method name="withTime"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="time" type="java.util.Date">
+</parameter>
+<parameter name="timeZone" type="java.util.TimeZone">
+</parameter>
+</method>
+<method name="withTime"
+ return="org.ohmage.streams.StreamPointBuilder"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="time" type="DateTime">
 </parameter>
 </method>
 <method name="write"
