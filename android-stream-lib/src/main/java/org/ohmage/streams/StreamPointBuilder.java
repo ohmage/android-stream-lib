@@ -387,7 +387,7 @@ public class StreamPointBuilder {
                 metadata.put("timestamp", mTimestamp);
             if (mLocation != null) {
                 JSONObject location = new JSONObject();
-                location.put("timestamp", mLocation.getTime());
+                location.put("time", mLocation.getTime());
                 location.put("latitude", mLocation.getLatitude());
                 location.put("longitude", mLocation.getLongitude());
                 location.put("accuracy", mLocation.getAccuracy());
