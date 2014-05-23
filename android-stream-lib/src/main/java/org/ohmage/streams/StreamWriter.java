@@ -52,6 +52,8 @@ public class StreamWriter implements ServiceConnection {
 
     private ServiceConnectionChange mListener;
 
+    private boolean mShouldClose = false;
+
     public static interface ServiceConnectionChange {
         public void onServiceConnected(StreamWriter writer);
 
@@ -70,6 +72,9 @@ public class StreamWriter implements ServiceConnection {
     public synchronized void onServiceConnected(ComponentName name, IBinder service) {
         dataService = IStreamReceiver.Stub.asInterface(service);
 
+        if (mListener != null)
+            mListener.onServiceConnected(this);
+
         // Write any streams which came before we were connected
         for (StreamPointBuilder stream : mBuffer) {
             try {
@@ -81,8 +86,9 @@ public class StreamWriter implements ServiceConnection {
         }
         mBuffer.clear();
 
-        if (mListener != null)
-            mListener.onServiceConnected(this);
+        if(mShouldClose) {
+            close();
+        }
     }
 
     /**
@@ -106,8 +112,12 @@ public class StreamWriter implements ServiceConnection {
     }
 
     public void close() {
-        mContext.unbindService(this);
-        dataService = null;
+        if(!mBuffer.isEmpty()) {
+            mShouldClose = true;
+        } else {
+            mContext.unbindService(this);
+            dataService = null;
+        }
     }
 
     public synchronized void write(String streamId, int streamVersion, String metadata, String data)
