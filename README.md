@@ -58,28 +58,72 @@ and call the method [StreamPointBuilder#writeAsync(AsyncBulkInsertHandler)] on t
 
 Look at the [javadocs] for more information about the [StreamPointBuilder] and other classes.
 
-INTEGRATE WITH OHMAGE
----------------------
+INTEGRATE WITH OHMAGE ANDROID APP
+---------------------------------
 
-In your manifest, you can also define activities which can handle
-`org.ohmage.streams.ACTION_CONFIGURE` and
-`org.ohmage.streams.ACTION_VIEW`. They should also specify a mimeType of
-`stream/streamId`. `org.ohmage.streams.ACTION_CONFIGURE` will be called when the user tries to
-configure your stream through ohmage and `org.ohmage.streams.ACTION_VIEW` will be called when the
-user tries to view data from your stream through ohmage. It will probably look something like this:
+In your manifest, if you have a specific activity (that isn't the main activity) which is meant to
+configure the stream, you should add an `intent-filter` to handle the
+[StreamContract.ACTION_CONFIGURE] action. It will look something like this:
 
     <activity android:name=".ConfigureActivity" android:label="@string/app_name">
         <intent-filter>
             <action android:name="org.ohmage.streams.ACTION_CONFIGURE" />
-            <data android:mimeType="stream/edu.ucla.cens.Mobility" />
+            <category android:name="android.intent.category.DEFAULT" />
         </intent-filter>
     </activity>
-    <activity android:name=".AnalyticsActivity" android:label="@string/app_name">
-        <intent-filter>
-            <action android:name="org.ohmage.streams.ACTION_VIEW" />
-            <data android:mimeType="stream/edu.ucla.cens.Mobility" />
-        </intent-filter>
-    </activity>
+
+If the main activity (`android.intent.action.MAIN`) is the activity which can be used to configure
+the stream you don't need to add an extra `intent-filter`. Just make sure to include the
+`android.intent.category.DEFAULT` category which lets ohmage launch it.
+
+CREATE STREAM ON OHMAGE SERVER
+------------------------------
+
+Until the [front end] is finished, [EasyPost] can be used to create the stream. You should first
+Authorize yourself using the `Authorization Token` api. Then you can use the `Stream Creation` api
+with json like the following:
+
+    {
+       "name":"Mobility Stream (Google)",
+       "description":"The mobility stream that uses the google classifier.",
+       "definition":{
+          "type":"array",
+          "doc":"An array of probable activities and confidence levels",
+          "optional":false,
+          "name":"accel_data",
+          "constType":{
+             "type":"object",
+             "doc":"A single activity and confidence level.",
+             "optional":false,
+             "fields":[
+                {
+                   "type":"string",
+                   "doc":"The activity that was detected.",
+                   "optional":false,
+                   "name":"activity"
+                },
+                {
+                   "type":"number",
+                   "doc":"A value from 0 to 100 indicating the likelihood that the user is performing this activity.",
+                   "optional":false,
+                   "name":"confidence"
+                }
+             ]
+          }
+       },
+       "apps":{
+          "ios":null,
+          "android":{
+             "app_uri":"https://play.google.com/store/apps/details?id=org.ohmage.mobility",
+             "authorization_uri":null,
+             "package":"org.ohmage.mobility",
+             "version":1
+          }
+       }
+    }
+
+`definition` is a [concordia] schema. More information on how to define your stream can be found
+here: https://github.com/jojenki/Concordia/wiki/Examples
 
 CONTRIBUTE
 ----------
@@ -118,6 +162,10 @@ LICENSE
 [AsyncBulkInsertHandler]: http://ohmage.org/android-stream-lib/reference/org/ohmage/streams/AsyncBulkInsertHandler.html
 [StreamPointBuilder#writeAsync(AsyncBulkInsertHandler)]: http://ohmage.org/android-stream-lib/reference/org/ohmage/streams/StreamPointBuilder.html#writeAsync(org.ohmage.streams.AsyncBulkInsertHandler)
 [javadocs]: http://ohmage.org/android-stream-lib/reference/org/ohmage/streams/package-summary.html
+[StreamContract.ACTION_CONFIGURE]: http://ohmage.org/android-stream-lib/reference/org/ohmage/streams/StreamContract.html#ACTION_CONFIGURE
+[front end]: https://github.com/ohmage/front-end
+[EasyPost]: https://dev.ohmage.org/ohmage/EasyPost.html
+[concordia]: https://github.com/jojenki/Concordia
 [AOSP coding style guidelines]: http://source.android.com/source/code-style.html
 [AOSP style formatters]: http://source.android.com/source/using-eclipse.html#eclipse-formatting
 [file an issue]: https://github.com/ohmage/android-stream-lib/issues/new
